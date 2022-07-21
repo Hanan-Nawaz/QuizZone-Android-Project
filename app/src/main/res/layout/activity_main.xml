@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="1.5"
+        android:layout_weight="1.8"
         >
 
         <TextView
@@ -37,19 +37,17 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/border"
+        android:id="@+id/parentRelative"
+        android:padding="25dp"
+        android:paddingTop="50dp"
         >
 
-        <TextView
+        <androidx.fragment.app.FragmentContainerView
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:textSize="30sp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/app_name"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_alignLeft=""
+            android:layout_centerVertical="true"
+            android:id="@+id/fragment_viewer"
             />
 
     </RelativeLayout>

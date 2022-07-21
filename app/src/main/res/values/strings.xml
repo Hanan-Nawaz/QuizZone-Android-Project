@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">QuizZone</string>
     <string name="login_with">Login with </string>
+    <string name="email" >Email </string>
+    <string name="have_an_account">Already have an Account? </string>
+    <string name="login">Login</string>
+    <string name="not_have_an_account"> Do not have an Account?</string>
+    <string name="signup">Signup</string>
 </resources>
