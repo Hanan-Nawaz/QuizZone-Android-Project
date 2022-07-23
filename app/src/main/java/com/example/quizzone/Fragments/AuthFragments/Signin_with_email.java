@@ -32,8 +32,7 @@ public class Signin_with_email extends Fragment {
     EditText Password;
     Button SignIn;
     FirebaseFirestore db;
-    TextView UserEmail;
-    TextView UserName;
+
 
     public Signin_with_email() {
         // Required empty public constructor
@@ -57,8 +56,7 @@ public class Signin_with_email extends Fragment {
 
         Email = view.findViewById(R.id.EmailSignIn);
         Password = view.findViewById(R.id.PasswordSignIn);
-        UserEmail = view.findViewById(R.id.UserEmail);
-        UserName = view.findViewById(R.id.UserName);
+
 
         db = FirebaseFirestore.getInstance();
         SignIn = view.findViewById(R.id.SignIn);
@@ -66,35 +64,42 @@ public class Signin_with_email extends Fragment {
             @Override
             public void onClick(View view) {
                 String email = Email.getText().toString();
-                DocumentReference documentReference = db.collection("Users").document(email);
-                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(task.isSuccessful()){
-                            DocumentSnapshot document = task.getResult();
-                            if(document.exists()){
-                                String password = document.get("Password").toString();
-                                String Name = document.get("Name").toString();
-                                String PassFromUSer = Password.getText().toString();
+                String PassFromUSer = Password.getText().toString();
 
-                                UserName.setText(Name);
-                                UserEmail.setText(email);
+                if(email.equals("") || PassFromUSer.equals("")){
+                    Toast.makeText(getContext(), "Both Fields Email and Password are Mandatory", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    DocumentReference documentReference = db.collection("Users").document(email);
+                    documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful()){
+                                DocumentSnapshot document = task.getResult();
+                                if(document.exists()){
+                                    String password = document.get("Password").toString();
+                                    String UName = document.get("Name").toString();
+                                    String UEmail = document.get("Email").toString();
 
-                                if(password.equals(PassFromUSer)){
-                                    Toast.makeText(getContext(), "User Found", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(getContext(), MainActivity.class);
-                                    startActivity(intent);
+                                    if(password.equals(PassFromUSer)){
+                                        Toast.makeText(getContext(), "Successfully SignedIn", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(getContext(), MainActivity.class);
+                                        intent.putExtra("Email", UEmail);
+                                        intent.putExtra("Name", UName);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        Toast.makeText(getContext(), "Wrong Password!!!", Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                                else{
-                                    Toast.makeText(getContext(), "Wrong Password!!!", Toast.LENGTH_LONG).show();
+                                else {
+                                    Toast.makeText(getContext(), "Wrong Email/Password!!!", Toast.LENGTH_LONG).show();
                                 }
-                            }
-                            else {
-                                Toast.makeText(getContext(), "User not Found", Toast.LENGTH_LONG).show();
                             }
                         }
-                    }
-                });
+                    });
+                }
+
 
             }
         });

@@ -6,15 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.widget.Switch;
+import android.view.View;
+import android.widget.TextView;
 
-import com.example.quizzone.Fragments.AuthFragments.Signin_with_email;
+import com.example.quizzone.Fragments.MainFragments.Dashboard;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    TextView UserEmail;
+    TextView UserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +32,31 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        navigationView = findViewById(R.id.NavigationView);
+
+        View header = navigationView.getHeaderView(0);
+
+        UserEmail = header.findViewById(R.id.UserEmail);
+        UserName = header.findViewById(R.id.UserName);
+
+
+            String email = getIntent().getStringExtra("Email");
+            String name = getIntent().getStringExtra("Name");
+            UserName.setText(name);
+            UserEmail.setText(email);
+
+
         if(savedInstanceState == null){
             Bundle bundle = new Bundle();
             bundle.putInt("15", 0);
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.Main, Signin_with_email.class, bundle).commit();
+                    .add(R.id.Main, Dashboard.class, bundle).commit();
         }
 
-        navigationView = findViewById(R.id.NavigationView);
+
+
+
         toolbar = findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.DrawerLayout);
@@ -52,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case (R.id.home):{
-                        Signin_with_email signinWithEmail = new Signin_with_email();
+                        Dashboard dashboard = new Dashboard();
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.add(R.id.Main, signinWithEmail);
+                        fragmentTransaction.add(R.id.Main, dashboard);
                         fragmentTransaction.commit();
                         break;
                     }

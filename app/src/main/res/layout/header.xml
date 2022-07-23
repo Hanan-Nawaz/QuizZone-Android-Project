@@ -14,9 +14,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Hanan"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:id="@+id/UserName"
         />
@@ -24,9 +23,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="hanannawaz0@gmail.com"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:id="@+id/UserEmail"
         />
