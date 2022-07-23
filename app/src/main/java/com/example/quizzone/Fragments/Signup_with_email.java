@@ -14,10 +14,13 @@ import android.widget.Button;
 
 import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.R;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Signup_with_email extends Fragment {
 
     Button back;
+
+    FirebaseFirestore db;
 
     public Signup_with_email() {
         // Required empty public constructor
@@ -35,9 +38,11 @@ public class Signup_with_email extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), AuthActivity.class);
                 startActivity(intent);
-
             }
         });
+
+        db = FirebaseFirestore.getInstance();
+
 
         return view;
     }
