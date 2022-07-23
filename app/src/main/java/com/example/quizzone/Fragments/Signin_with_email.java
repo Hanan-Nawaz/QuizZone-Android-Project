@@ -1,5 +1,6 @@
 package com.example.quizzone.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,11 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.R;
 
 public class Signin_with_email extends Fragment {
 
+    Button back;
 
     public Signin_with_email() {
         // Required empty public constructor
@@ -22,6 +26,17 @@ public class Signin_with_email extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signin_with_email, container, false);
+        View view = inflater.inflate(R.layout.fragment_signin_with_email, container, false);
+
+        back = view.findViewById(R.id.Back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), AuthActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return view;
     }
 }
