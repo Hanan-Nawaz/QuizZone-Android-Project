@@ -12,4 +12,5 @@
     <string name="EnterPassword">Enter Password</string>
     <string name="EnterEmail">Enter Email</string>
     <string name="SignInWithEmail">SignIn With Email</string>
+    <string name="Back">Back</string>
 </resources>
