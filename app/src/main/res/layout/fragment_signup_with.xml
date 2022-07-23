@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/login_with"
+    android:id="@+id/signup_with"
     android:orientation="vertical"
-    tools:context=".Fragments.login_with">
+    tools:context=".Fragments.signup_with">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="@string/login_with"
+        android:text="@string/signup_with"
         android:id="@+id/tv_main_auth"
         android:layout_gravity="center"
         android:textAlignment="center"
@@ -39,20 +39,20 @@
             android:layout_width="0dp"
             android:layout_weight="0.8"
             android:layout_height="50dp"
-            android:text="@string/not_have_an_account"
+            android:text="@string/have_an_account"
             android:layout_gravity="end"
             android:textAlignment="viewEnd"
             android:textSize="25sp"
             android:textColor="@color/primary"
             android:layout_marginRight="2dp"
-            android:layout_marginEnd="2dp" />
+            />
 
         <TextView
             android:id="@+id/tv_btn_auth"
             android:layout_width="0dp"
             android:layout_weight="0.23"
             android:layout_height="50dp"
-            android:text="@string/signup"
+            android:text="@string/SignIn"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:textSize="25sp"
