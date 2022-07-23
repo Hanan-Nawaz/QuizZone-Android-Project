@@ -8,4 +8,7 @@
     <string name="signup">Signup</string>
     <string name="signup_with">Signup With</string>
     <string name="SignIn">SignIn</string>
+    <string name="SignUpWithEmail">SignUp With Email</string>
+    <string name="EnterPassword">Enter Password</string>
+    <string name="EnterEmail">Enter Email</string>
 </resources>

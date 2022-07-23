@@ -23,7 +23,6 @@ public class AuthActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .add(R.id.fragment_viewer , login_with.class, bundle).commit();
-
         }
 
     }
