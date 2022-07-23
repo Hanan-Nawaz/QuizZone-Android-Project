@@ -10,14 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
 
 import com.example.quizzone.R;
 
 public class login_with extends Fragment {
 
-    Button btn;
+    TextView btn;
 
     public login_with() {
         // Required empty public constructor
@@ -29,7 +29,7 @@ public class login_with extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_loginwith, container, false);
 
-        btn = view.findViewById(R.id.btn_auth);
+        btn = view.findViewById(R.id.tv_btn_auth);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

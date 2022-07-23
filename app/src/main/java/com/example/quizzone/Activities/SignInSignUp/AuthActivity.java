@@ -1,4 +1,4 @@
-package com.example.quizzone;
+package com.example.quizzone.Activities.SignInSignUp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,14 +7,14 @@ import androidx.fragment.app.FragmentContainerView;
 import android.os.Bundle;
 
 import com.example.quizzone.Fragments.login_with;
+import com.example.quizzone.R;
 
-public class MainActivity extends AppCompatActivity {
+public class AuthActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_auth);
         getSupportActionBar().hide();
 
         if(savedInstanceState == null){
