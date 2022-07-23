@@ -22,6 +22,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Map;
+
 public class Signin_with_email extends Fragment {
 
     Button back;
@@ -67,9 +69,17 @@ public class Signin_with_email extends Fragment {
                         if(task.isSuccessful()){
                             DocumentSnapshot document = task.getResult();
                             if(document.exists()){
-                                Toast.makeText(getContext(), "User Found", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getContext(), MainActivity.class);
-                                startActivity(intent);
+                                String password = document.getString("Password");
+                                String PassFromUSer = Password.getText().toString();
+
+                                if(password == PassFromUSer){
+                                    Toast.makeText(getContext(), "User Found", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(getContext(), MainActivity.class);
+                                    startActivity(intent);
+                                }
+                                else{
+                                    Toast.makeText(getContext(), "Wrong Password!!!", Toast.LENGTH_LONG).show();
+                                }
                             }
                             else {
                                 Toast.makeText(getContext(), "User not Found", Toast.LENGTH_LONG).show();
