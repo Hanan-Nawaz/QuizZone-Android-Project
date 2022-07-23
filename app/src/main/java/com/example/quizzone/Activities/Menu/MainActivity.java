@@ -14,7 +14,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Switch;
 
-import com.example.quizzone.Fragments.Signin_with_email;
+import com.example.quizzone.Fragments.AuthFragments.Signin_with_email;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
 

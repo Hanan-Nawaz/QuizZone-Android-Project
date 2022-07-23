@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentContainerView;
 
 import android.os.Bundle;
 
-import com.example.quizzone.Fragments.login_with;
+import com.example.quizzone.Fragments.AuthFragments.login_with;
 import com.example.quizzone.R;
 
 public class AuthActivity extends AppCompatActivity {
