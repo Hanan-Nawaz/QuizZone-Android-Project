@@ -17,7 +17,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Users">Total Users</string>
+    <string name="TestTaken">Total Test Taken</string>
+    <string name="WelcomeBack">Welcome Back</string>
+    <string name="Subjects">Total Subjects</string>
 
 </resources>

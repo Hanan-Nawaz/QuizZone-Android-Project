@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(savedInstanceState == null){
             Bundle bundle = new Bundle();
+            bundle.putString("Email", email );
+            bundle.putString("Name", name );
+            Dashboard dashboard = new Dashboard();
+            dashboard.setArguments(bundle);
             bundle.putInt("15", 0);
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
