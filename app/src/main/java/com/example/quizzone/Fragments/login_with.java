@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -18,6 +19,7 @@ import com.example.quizzone.R;
 public class login_with extends Fragment {
 
     TextView btn;
+    Button BtnAuth;
 
     public login_with() {
         // Required empty public constructor
@@ -38,6 +40,19 @@ public class login_with extends Fragment {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.hide(login_with.this);
                 fragmentTransaction.add(R.id.fragment_viewer, signupWith);
+                fragmentTransaction.commit();
+            }
+        });
+
+        BtnAuth = view.findViewById(R.id.btn_auth);
+        BtnAuth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Signin_with_email SignInWithEmail = new Signin_with_email();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.hide(login_with.this);
+                fragmentTransaction.add(R.id.AuthActivity, SignInWithEmail);
                 fragmentTransaction.commit();
             }
         });

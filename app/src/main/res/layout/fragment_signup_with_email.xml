@@ -60,6 +60,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:id="@+id/EmailSignUp"
             android:layout_weight="1"
             android:hint="@string/EnterEmail"
             android:inputType="textEmailAddress"
@@ -76,6 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:id="@+id/PasswordSignUp"
             android:inputType="textPassword"
             android:hint="@string/EnterPassword"
             android:textColorHint="@color/primary"
