@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/login_with"
     android:orientation="vertical"
-    tools:context=".Fragments.login_with">
+    tools:context=".Fragments.AuthFragments.login_with">
 
     <TextView
         android:layout_width="match_parent"

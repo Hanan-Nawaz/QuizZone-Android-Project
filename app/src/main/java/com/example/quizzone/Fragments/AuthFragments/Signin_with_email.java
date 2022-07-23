@@ -1,4 +1,4 @@
-package com.example.quizzone.Fragments;
+package com.example.quizzone.Fragments.AuthFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizzone.Activities.Menu.MainActivity;
@@ -31,6 +32,8 @@ public class Signin_with_email extends Fragment {
     EditText Password;
     Button SignIn;
     FirebaseFirestore db;
+    TextView UserEmail;
+    TextView UserName;
 
     public Signin_with_email() {
         // Required empty public constructor
@@ -54,7 +57,8 @@ public class Signin_with_email extends Fragment {
 
         Email = view.findViewById(R.id.EmailSignIn);
         Password = view.findViewById(R.id.PasswordSignIn);
-
+        UserEmail = view.findViewById(R.id.UserEmail);
+        UserName = view.findViewById(R.id.UserName);
 
         db = FirebaseFirestore.getInstance();
         SignIn = view.findViewById(R.id.SignIn);
@@ -69,10 +73,14 @@ public class Signin_with_email extends Fragment {
                         if(task.isSuccessful()){
                             DocumentSnapshot document = task.getResult();
                             if(document.exists()){
-                                String password = document.getString("Password");
+                                String password = document.get("Password").toString();
+                                String Name = document.get("Name").toString();
                                 String PassFromUSer = Password.getText().toString();
 
-                                if(password == PassFromUSer){
+                                UserName.setText(Name);
+                                UserEmail.setText(email);
+
+                                if(password.equals(PassFromUSer)){
                                     Toast.makeText(getContext(), "User Found", Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(getContext(), MainActivity.class);
                                     startActivity(intent);

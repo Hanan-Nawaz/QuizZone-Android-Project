@@ -1,4 +1,4 @@
-package com.example.quizzone.Fragments;
+package com.example.quizzone.Fragments.AuthFragments;
 
 import android.content.Intent;
 import android.os.Bundle;

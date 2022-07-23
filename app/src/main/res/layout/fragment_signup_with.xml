@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/signup_with"
     android:orientation="vertical"
-    tools:context=".Fragments.signup_with">
+    tools:context=".Fragments.AuthFragments.signup_with">
 
     <TextView
         android:layout_width="match_parent"
