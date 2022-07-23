@@ -100,19 +100,18 @@
             android:background="@drawable/button"
             />
 
-        <TextView
-            android:layout_width="100dp"
+        <Button
+            android:layout_width="140dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/Back"
             android:text="@string/Back"
-            android:background="@color/primary"
+            android:background="@drawable/button"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:layout_gravity="start"
-            android:paddingLeft="20dp"
             android:layout_marginTop="20dp"
-            android:paddingTop="5dp" />
+            />
 
     </LinearLayout>
 
