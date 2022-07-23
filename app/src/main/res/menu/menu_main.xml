@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="@string/menu_home"
+            android:icon="@drawable/home_icon"
+            />
+        <item
+            android:id="@+id/profile"
+            android:title="@string/menu_profile"
+            android:icon="@drawable/profile_icon"
+            />
+    </group>
+
+</menu>

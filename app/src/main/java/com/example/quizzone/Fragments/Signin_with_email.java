@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.quizzone.Activities.Menu.MainActivity;
 import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -67,6 +68,8 @@ public class Signin_with_email extends Fragment {
                             DocumentSnapshot document = task.getResult();
                             if(document.exists()){
                                 Toast.makeText(getContext(), "User Found", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getContext(), MainActivity.class);
+                                startActivity(intent);
                             }
                             else {
                                 Toast.makeText(getContext(), "User not Found", Toast.LENGTH_LONG).show();
