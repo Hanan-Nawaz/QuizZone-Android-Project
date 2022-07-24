@@ -31,32 +31,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/tv_auth"
             android:layout_width="0dp"
-            android:layout_weight="0.8"
             android:layout_height="60dp"
-            android:text="@string/not_have_an_account"
             android:layout_gravity="end"
-            android:textAlignment="viewEnd"
-            android:textSize="13sp"
-            android:textColor="@color/primary"
+            android:layout_marginEnd="2dp"
             android:layout_marginRight="2dp"
-            android:layout_marginEnd="2dp" />
+            android:layout_weight="0.8"
+            android:text="@string/not_have_an_account"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/primary"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/tv_btn_auth"
             android:layout_width="0dp"
-            android:layout_weight="0.24"
             android:layout_height="60dp"
-            android:text="@string/signup"
             android:layout_gravity="center"
+            android:layout_weight="0.24"
+            android:text="@string/signup"
             android:textAlignment="center"
-            android:textSize="13sp"
             android:textColor="#04047A"
-            />
+            android:textSize="13sp" />
     </LinearLayout>
 </LinearLayout>
