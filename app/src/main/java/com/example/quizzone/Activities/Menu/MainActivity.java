@@ -102,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        onBackPressed();
+
     }
 
+    @Override
+    public void onBackPressed() {
+        drawerLayout.closeDrawer(GravityCompat.START);
+    }
 }
