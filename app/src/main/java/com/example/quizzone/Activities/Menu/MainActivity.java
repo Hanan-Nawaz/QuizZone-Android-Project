@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-
         toolbar = findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.DrawerLayout);
@@ -86,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
 }

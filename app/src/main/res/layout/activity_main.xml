@@ -32,7 +32,7 @@
             android:layout_height="50dp"
             android:background="@color/primary"
             app:titleTextColor="@color/white"
-            app:title="@string/menu_home"
+            app:title="@string/menu_dashboard"
             android:id="@+id/Toolbar"
             app:navigationIcon="@drawable/menu_icon"
             />

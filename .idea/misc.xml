@@ -8,6 +8,7 @@
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button.xml" value="0.126" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button_normal.xml" value="0.126" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button_pressed.xml" value="0.126" />
+        <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/dashboardborder.xml" value="0.1" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/edittext.xml" value="0.126" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/activity_auth.xml" value="0.1" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
@@ -19,6 +20,7 @@
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/header.xml" value="0.17074275362318841" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Projects/QuizZone/app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>

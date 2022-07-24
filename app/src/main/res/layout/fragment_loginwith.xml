@@ -20,7 +20,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:id="@+id/btn_auth"
         android:text="@string/email"
         android:textSize="30sp"
@@ -38,11 +38,11 @@
             android:id="@+id/tv_auth"
             android:layout_width="0dp"
             android:layout_weight="0.8"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="@string/not_have_an_account"
             android:layout_gravity="end"
             android:textAlignment="viewEnd"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="@color/primary"
             android:layout_marginRight="2dp"
             android:layout_marginEnd="2dp" />
@@ -50,12 +50,12 @@
         <TextView
             android:id="@+id/tv_btn_auth"
             android:layout_width="0dp"
-            android:layout_weight="0.23"
-            android:layout_height="50dp"
+            android:layout_weight="0.24"
+            android:layout_height="60dp"
             android:text="@string/signup"
             android:layout_gravity="center"
             android:textAlignment="center"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="#04047A"
             />
     </LinearLayout>
