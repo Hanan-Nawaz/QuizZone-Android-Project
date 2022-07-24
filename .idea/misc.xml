@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/border_auth.xml" value="0.126" />
+        <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/border_picture.xml" value="0.12" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button.xml" value="0.126" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button_normal.xml" value="0.126" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/drawable/button_pressed.xml" value="0.126" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_loginwith.xml" value="0.25" />
+        <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_profile.xml" value="0.17074275362318841" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_signin_with_email.xml" value="0.17074275362318841" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_signup_with.xml" value="0.17074275362318841" />
         <entry key="..\:/Android Projects/QuizZone/app/src/main/res/layout/fragment_signup_with_email.xml" value="0.1" />
