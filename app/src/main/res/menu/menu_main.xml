@@ -12,6 +12,11 @@
             android:title="@string/menu_profile"
             android:icon="@drawable/profile_icon"
             />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/logout"
+            android:icon="@drawable/logout_icon"
+            />
     </group>
 
 </menu>

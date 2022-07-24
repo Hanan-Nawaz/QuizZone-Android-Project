@@ -21,5 +21,6 @@
     <string name="TestTaken">Total Test Taken</string>
     <string name="WelcomeBack">Welcome Back</string>
     <string name="Subjects">Total Subjects</string>
+    <string name="logout">Logout</string>
 
 </resources>
