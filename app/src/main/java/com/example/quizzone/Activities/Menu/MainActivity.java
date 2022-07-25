@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.Fragments.MainFragments.Dashboard;
+import com.example.quizzone.Fragments.MainFragments.Profile;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -86,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.profile):{
+                        Profile profile = new Profile();
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.Main, profile);
+                        fragmentTransaction.commit();
                         break;
                     }
 

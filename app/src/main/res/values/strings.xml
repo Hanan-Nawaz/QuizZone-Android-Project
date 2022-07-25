@@ -22,7 +22,13 @@
     <string name="WelcomeBack">Welcome Back</string>
     <string name="Subjects">Total Subjects</string>
     <string name="logout">Logout</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="MobileNumber">Mobile Number</string>
+    <string name="ID">ID</string>
+    <string name="Name">Name</string>
+    <string name="Occupation">Occupation</string>
+    <string name="Password">Password</string>
+    <string name="Role">Role</string>
+    <string name="Status">Status</string>
+    <string name="Email">Email</string>
 
 </resources>
