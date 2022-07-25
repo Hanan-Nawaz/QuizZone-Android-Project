@@ -72,6 +72,7 @@
             android:textSize="20sp"
             tools:ignore="ExtraText"
             android:enabled="false"
+            android:paddingLeft="5dp"
             android:id="@+id/ProfileEmail"
             android:background="@drawable/edittext_profile"
             />
@@ -105,6 +106,7 @@
             android:textSize="20sp"
             tools:ignore="ExtraText"
             android:enabled="false"
+            android:paddingLeft="5dp"
             android:id="@+id/ProfileID"
             android:background="@drawable/edittext_profile"
             />
@@ -136,6 +138,7 @@
             android:layout_weight="1"
             android:text="@string/MobileNumber"
             android:textSize="20sp"
+            android:paddingLeft="5dp"
             tools:ignore="ExtraText"
             android:enabled="false"
             android:id="@+id/ProfileMobileNumber"
@@ -172,6 +175,7 @@
             tools:ignore="ExtraText"
             android:enabled="false"
             android:id="@+id/ProfilePassword"
+            android:paddingLeft="5dp"
             android:background="@drawable/edittext_profile"
             />
 
@@ -202,6 +206,7 @@
             android:layout_weight="1"
             android:text="@string/Name"
             android:textSize="20sp"
+            android:paddingLeft="5dp"
             tools:ignore="ExtraText"
             android:enabled="false"
             android:id="@+id/ProfileName"
@@ -235,6 +240,7 @@
             android:layout_weight="1"
             android:text="@string/Occupation"
             android:textSize="20sp"
+            android:paddingLeft="5dp"
             tools:ignore="ExtraText"
             android:enabled="false"
             android:id="@+id/ProfileOccupation"
@@ -270,6 +276,7 @@
             android:textSize="20sp"
             tools:ignore="ExtraText"
             android:enabled="false"
+            android:paddingLeft="5dp"
             android:id="@+id/ProfileStatus"
             android:background="@drawable/edittext_profile"
             />

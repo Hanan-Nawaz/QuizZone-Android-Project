@@ -87,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.profile):{
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Email" , email);
                         Profile profile = new Profile();
+                        profile.setArguments(bundle);
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.Main, profile);
                         fragmentTransaction.commit();
