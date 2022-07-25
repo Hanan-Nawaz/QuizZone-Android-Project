@@ -7,57 +7,82 @@
     android:orientation="vertical"
     tools:context=".Fragments.AuthFragments.signup_with">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="@string/signup_with"
-        android:id="@+id/tv_main_auth"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textColor="@color/primary"
-        />
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/btn_auth"
-        android:text="@string/email"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:background="@drawable/button"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="@string/signup_with"
+            android:id="@+id/tv_main_auth"
+            android:textSize="30sp"
+            android:textColor="@color/primary"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_auth"
+            android:layout_gravity="center"
+            android:text="@string/email"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/tv_auth"
             android:layout_width="0dp"
-            android:layout_weight="0.8"
-            android:layout_height="60dp"
-            android:text="@string/have_an_account"
+            android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:textAlignment="viewEnd"
-            android:textSize="13sp"
-            android:textColor="@color/primary"
-            android:layout_marginRight="2dp"
             android:layout_marginEnd="2dp"
-            />
+            android:layout_marginRight="2dp"
+            android:layout_weight="0.8"
+            android:text="@string/have_an_account"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/primary"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/tv_btn_auth"
             android:layout_width="0dp"
-            android:layout_weight="0.23"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.24"
+            android:paddingLeft="10dp"
             android:text="@string/SignIn"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textSize="13sp"
             android:textColor="#04047A"
-            />
+            android:textSize="13sp" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
 </LinearLayout>
