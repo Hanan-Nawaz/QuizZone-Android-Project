@@ -64,49 +64,58 @@ public class Profile extends Fragment {
                         String OccupationDB = documentSnapshot.getString("Occupation");
                         String StatusDB = documentSnapshot.getString("Status");
 
-                        if(NameDB.equals("")){
+                        if(NameDB.equals("0")){
                             NameET.setText("Please Update");
                         }
                         else{
                             NameET.setText(NameDB);
                         }
 
-                        if(IdDB.equals("")){
+                        if(IdDB.equals("0")){
                             IdET.setText("Please Update");
                         }
                         else{
                             IdET.setText(IdDB);
                         }
 
-                        if(MobileNumberDB.equals("")){
+                        if(MobileNumberDB.equals("0")){
                             MobileNumberET.setText("Please Update");
                         }
                         else{
                             MobileNumberET.setText(MobileNumberDB);
                         }
 
-                        if(PasswordDB.equals("")){
+                        if(PasswordDB.equals("0")){
                             PasswordET.setText("Please Update");
                         }
                         else{
                             PasswordET.setText(PasswordDB);
                         }
 
-                        if(EmailDB.equals("")){
+                        if(EmailDB.equals("0")){
                             EmailET.setText("Please Update");
                         }
                         else{
                             EmailET.setText(EmailDB);
                         }
 
-                        if(OccupationDB.equals("")){
+                        if(OccupationDB.equals("0")){
                             OccupationET.setText("Please Update");
+                        }
+                        else if(OccupationDB.equals("1")){
+                            OccupationET.setText("Student");
+                        }
+                        else if(OccupationDB.equals("2")){
+                            OccupationET.setText("Teacher");
+                        }
+                        else if(OccupationDB.equals("3")){
+                            OccupationET.setText("Admin");
                         }
                         else{
                             OccupationET.setText(OccupationDB);
                         }
 
-                        if(StatusDB.equals("")){
+                        if(StatusDB.equals("0")){
                             StatusET.setText("Please Update");
                         }
                         else{

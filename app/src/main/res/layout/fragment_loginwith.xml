@@ -22,7 +22,7 @@
         android:textAlignment="center"
         android:text="@string/login_with"
         android:id="@+id/tv_main_auth"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textColor="@color/primary"
         />
 
@@ -41,7 +41,7 @@
             android:id="@+id/btn_auth"
             android:layout_gravity="center"
             android:text="@string/email"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textColor="@color/white"
             android:background="@drawable/button"
             />

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class Signin_with_email extends Fragment {
     EditText Password;
     Button SignIn;
     FirebaseFirestore db;
+    ProgressBar PBar;
 
 
     public Signin_with_email() {
@@ -56,6 +58,7 @@ public class Signin_with_email extends Fragment {
 
         Email = view.findViewById(R.id.EmailSignIn);
         Password = view.findViewById(R.id.PasswordSignIn);
+        PBar = view.findViewById(R.id.ProgressSignIn);
 
 
         db = FirebaseFirestore.getInstance();
@@ -63,11 +66,17 @@ public class Signin_with_email extends Fragment {
         SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                PBar.setVisibility(View.VISIBLE);
                 String email = Email.getText().toString();
                 String PassFromUSer = Password.getText().toString();
 
-                if(email.equals("") || PassFromUSer.equals("")){
-                    Toast.makeText(getContext(), "Both Fields Email and Password are Mandatory", Toast.LENGTH_LONG).show();
+                if(email.equals("") ){
+                    Email.setError("Email is Mandatory");
+                    PBar.setVisibility(View.INVISIBLE);
+                }
+                else if(PassFromUSer.equals("")){
+                    Password.setError("Password is Mandatory");
+                    PBar.setVisibility(View.INVISIBLE);
                 }
                 else{
                     DocumentReference documentReference = db.collection("Users").document(email);
@@ -90,10 +99,12 @@ public class Signin_with_email extends Fragment {
                                     }
                                     else{
                                         Toast.makeText(getContext(), "Wrong Password!!!", Toast.LENGTH_LONG).show();
+                                        PBar.setVisibility(View.INVISIBLE);
                                     }
                                 }
                                 else {
                                     Toast.makeText(getContext(), "Wrong Email/Password!!!", Toast.LENGTH_LONG).show();
+                                    PBar.setVisibility(View.INVISIBLE);
                                 }
                             }
                         }

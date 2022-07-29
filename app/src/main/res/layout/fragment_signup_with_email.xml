@@ -94,24 +94,41 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginTop="25dp"
+            android:id="@+id/BtnSignUp"
             android:text="@string/signup"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:background="@drawable/button"
             />
 
-        <Button
-            android:layout_width="140dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/Back"
-            android:text="@string/Back"
-            android:background="@drawable/button"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:layout_gravity="start"
-            android:layout_marginTop="20dp"
-            />
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/Back"
+                android:text="@string/Back"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:layout_gravity="start"
+                />
+
+            <ProgressBar
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:indeterminateTint="@color/primary"
+                android:visibility="invisible"
+                android:id="@+id/ProgressSignup"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
