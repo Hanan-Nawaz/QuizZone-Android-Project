@@ -76,7 +76,7 @@ public class Signup_with_email extends Fragment {
                     PBar.setVisibility(View.INVISIBLE);
                 }
                 else {
-                    Insert insert = new Insert(email, "0" , "0", password , "0", "0", "Partial");
+                    Insert insert = new Insert(email, "0" , "0", password , "User", "0", "Partial");
                     collectionReference.document(email).set(insert).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -86,6 +86,7 @@ public class Signup_with_email extends Fragment {
                             else{
                                 Toast.makeText(getContext(), "Unexpected Error. Please Try Again ", Toast.LENGTH_LONG).show();
                             }
+                            PBar.setVisibility(View.INVISIBLE);
                         }
                     });
                 }

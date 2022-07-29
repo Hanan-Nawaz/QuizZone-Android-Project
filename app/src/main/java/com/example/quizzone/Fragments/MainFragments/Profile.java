@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.quizzone.R;
@@ -28,6 +29,7 @@ public class Profile extends Fragment {
     EditText PasswordET;
     EditText StatusET;
     EditText OccupationET;
+    Button btnEdit;
 
     public Profile() {
         // Required empty public constructor
@@ -49,6 +51,7 @@ public class Profile extends Fragment {
         NameET = view.findViewById(R.id.ProfileName);
         OccupationET = view.findViewById(R.id.ProfileOccupation);
         StatusET = view.findViewById(R.id.ProfileStatus);
+        btnEdit = view.findViewById(R.id.ButtonEdit);
 
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -64,7 +67,7 @@ public class Profile extends Fragment {
                         String OccupationDB = documentSnapshot.getString("Occupation");
                         String StatusDB = documentSnapshot.getString("Status");
 
-                        if(NameDB.equals("0")){
+                        if(NameDB.equals("User")){
                             NameET.setText("Please Update");
                         }
                         else{
@@ -120,6 +123,13 @@ public class Profile extends Fragment {
                         }
                         else{
                             StatusET.setText(StatusDB);
+                        }
+
+                        if(StatusDB.equals("Partial")){
+                            btnEdit.setText("Update");
+                        }
+                        else{
+                            btnEdit.setText("Edit");
                         }
 
                     }

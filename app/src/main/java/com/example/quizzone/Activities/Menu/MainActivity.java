@@ -70,11 +70,13 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        navigationView.setCheckedItem(R.id.home);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case (R.id.home):{
+                        getSupportActionBar().setTitle("Dashboard");
                         Bundle bundle = new Bundle();
                         bundle.putString("Email", email );
                         bundle.putString("Name", name );
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.profile):{
+                        getSupportActionBar().setTitle("Profile");
                         Bundle bundle = new Bundle();
                         bundle.putString("Email" , email);
                         Profile profile = new Profile();
