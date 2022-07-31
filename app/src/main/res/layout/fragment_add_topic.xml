@@ -9,74 +9,56 @@
     android:orientation="vertical"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:layout_marginTop="40dp"
+        android:orientation="vertical"
         >
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
+            android:layout_weight="2"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:background="@drawable/button_profile"
             android:padding="10dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/person" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/person"
+            android:background="@drawable/edittext_profile"
+            tools:ignore="NestedWeights" />
 
-        <ImageView
-            android:id="@+id/btnChoose"
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            android:padding="10dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="286dp"
-            android:layout_marginLeft="286dp"
-            android:layout_marginTop="278dp"
-            android:layout_marginEnd="-11dp"
-            android:layout_marginRight="-11dp"
-            android:layout_marginBottom="-3dp"
-            android:src="@drawable/add" />
-
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        >
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Topic Name"
-            android:textSize="25sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_weight="0.3"
+            android:layout_height="0dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:hint="Topic Name here..."
-            android:textColorHint="@color/primary"
-            android:background="@drawable/edittext"
-            android:textAlignment="center"
-            android:id="@+id/addTopicET"
-            />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Add Image"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="20sp"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeStepGranularity="2sp"
+                />
+
+
+            <ImageButton
+                android:id="@+id/btnChoose"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_gravity="end"
+                android:layout_height="match_parent"
+                android:src="@drawable/add"
+                android:scaleType="fitCenter"
+                android:background="@color/transparent"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -84,12 +66,53 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:text="Topic Name"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeStepGranularity="2sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="1"
+            android:hint="Topic Name here..."
+            android:textColorHint="@color/primary"
+            android:background="@drawable/edittext"
+            android:textAlignment="center"
+            android:id="@+id/addTopicET"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="40sp"
+            android:autoSizeStepGranularity="2sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         >
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:text="Save"
             android:textSize="30sp"
             android:id="@+id/addTopicBtn"
