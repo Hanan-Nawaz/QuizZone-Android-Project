@@ -14,26 +14,47 @@
         android:orientation="horizontal"
         >
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnEditLL"
+            android:background="@drawable/edittext"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/ButtonEdit"
+                android:textSize="20sp"
+                android:background="@color/transparent"
+                tools:ignore="ExtraText"
+                />
+
+        </LinearLayout>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="20sp"
             />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/button_profile"
+            android:visibility="invisible"
+            android:id="@+id/btnSaveLL"
+            android:background="@drawable/edittext"
             >
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
-                android:id="@+id/ButtonEdit"
-                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/ButtonSave"
+                android:text="@string/save"
                 android:textSize="20sp"
                 android:background="@color/transparent"
                 tools:ignore="ExtraText"
@@ -273,18 +294,58 @@
             tools:ignore="ExtraText"
             />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/Occupation"
-            android:textSize="20sp"
-            android:paddingLeft="5dp"
-            tools:ignore="ExtraText"
-            android:enabled="false"
-            android:id="@+id/ProfileOccupation"
-            android:background="@drawable/edittext_profile"
-            />
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Occupation"
+                android:textSize="20sp"
+                android:paddingLeft="5dp"
+                android:visibility="visible"
+                tools:ignore="ExtraText"
+                android:enabled="false"
+                android:id="@+id/ProfileOccupation"
+                android:background="@drawable/edittext_profile"
+                />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/OccupationRG"
+                    android:weightSum="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:text="Student"
+                        android:textSize="20sp"
+                        />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:text="Teacher"
+                        android:checked="false"
+                        android:textSize="20sp"
+                        />
+
+                </RadioGroup>
+
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
