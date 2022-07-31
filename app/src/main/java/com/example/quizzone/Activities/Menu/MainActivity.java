@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
+import com.example.quizzone.Fragments.MainFragments.AddTopic;
 import com.example.quizzone.Fragments.MainFragments.Dashboard;
 import com.example.quizzone.Fragments.MainFragments.Profile;
 import com.example.quizzone.R;
@@ -107,6 +108,18 @@ public class MainActivity extends AppCompatActivity {
                         profile.setArguments(bundle);
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.Main, profile);
+                        fragmentTransaction.commit();
+                        break;
+                    }
+
+                    case (R.id.addTopic):{
+                        getSupportActionBar().setTitle("Add Topic");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Email" , email);
+                        AddTopic addTopic = new AddTopic();
+                        addTopic.setArguments(bundle);
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.Main, addTopic);
                         fragmentTransaction.commit();
                         break;
                     }
