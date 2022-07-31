@@ -89,12 +89,14 @@ public class Signin_with_email extends Fragment {
                                     String password = document.get("Password").toString();
                                     String UName = document.get("Name").toString();
                                     String UEmail = document.get("Email").toString();
+                                    String UOccupation = document.get("Occupation").toString();
 
                                     if(password.equals(PassFromUSer)){
                                         Toast.makeText(getContext(), "Successfully SignedIn", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(getContext(), MainActivity.class);
                                         intent.putExtra("Email", UEmail);
                                         intent.putExtra("Name", UName);
+                                        intent.putExtra("Role", UOccupation);
                                         startActivity(intent);
                                     }
                                     else{

@@ -31,5 +31,6 @@
     <string name="Status">Status</string>
     <string name="Email">Email</string>
     <string name="save">Save</string>
+    <string name="add_topic">Add Topic</string>
 
 </resources>

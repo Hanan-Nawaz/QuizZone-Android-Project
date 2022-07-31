@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
             String email = getIntent().getStringExtra("Email");
             String name = getIntent().getStringExtra("Name");
+            String Role = getIntent().getStringExtra("Role");
             UserName.setText(name);
             UserEmail.setText(email);
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.Main, Dashboard.class, bundle).commit();
         }
 
+
         toolbar = findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.DrawerLayout);
@@ -71,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         navigationView.setCheckedItem(R.id.home);
+
+        if(Role.equals("1")){
+            navigationView.getMenu().findItem(R.id.addTopic).setVisible(false);
+        }
+        else if(Role.equals("2")){
+            navigationView.getMenu().findItem(R.id.addTopic).setVisible(true);
+        }
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -13,6 +13,11 @@
             android:icon="@drawable/profile_icon"
             />
         <item
+            android:id="@+id/addTopic"
+            android:title="@string/add_topic"
+            android:icon="@drawable/add"
+            />
+        <item
             android:id="@+id/logout"
             android:title="@string/logout"
             android:icon="@drawable/logout_icon"
