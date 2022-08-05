@@ -59,7 +59,6 @@ public class ViewTopics extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_topics, container, false);
 
 
-
         return view;
     }
 }

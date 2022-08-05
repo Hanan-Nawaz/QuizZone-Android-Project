@@ -1,10 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="85dp"
+    android:layout_margin="10dp"
     android:background="@color/white"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
 
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/logoIV"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:src="@drawable/add"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/titleTV"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:autoSizeMaxTextSize="40sp"
+                android:autoSizeMinTextSize="25sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/primary"
+                android:layout_weight="0.6"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:id="@+id/takeTestBtn"
+                    android:layout_marginRight="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:text="Take Test"
+                    android:textColor="@color/white"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeMinTextSize="25sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="none"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:id="@+id/addMcqBtn"
+                    android:layout_marginLeft="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button"
+                    android:text="Add Mcq"
+                    android:textColor="@color/white"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeMinTextSize="25sp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:autoSizeTextType="none"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
