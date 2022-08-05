@@ -12,16 +12,36 @@
             android:title="@string/menu_profile"
             android:icon="@drawable/profile_icon"
             />
-        <item
-            android:id="@+id/addTopic"
-            android:title="@string/add_topic"
-            android:icon="@drawable/add"
-            />
-        <item
-            android:id="@+id/logout"
-            android:title="@string/logout"
-            android:icon="@drawable/logout_icon"
-            />
+
     </group>
+
+    <item android:title="Topics">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/addTopic"
+                    android:title="@string/add_topic"
+                    android:icon="@drawable/add"
+                    />
+                <item
+                    android:id="@+id/viewTopics"
+                    android:title="@string/view_topics"
+                    android:icon="@drawable/view"
+                    />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Logout">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/logout_icon"
+                    />
+            </group>
+        </menu>
+    </item>
 
 </menu>
