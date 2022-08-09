@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="85dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
-    android:background="@color/white"
-    >
+    android:padding="5dp"
+    app:cardCornerRadius="5dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#EFEDEF"
         android:orientation="horizontal"
         >
 
@@ -44,6 +47,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:padding="10dp"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
                 android:layout_weight="1">

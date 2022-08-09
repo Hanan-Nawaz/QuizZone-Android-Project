@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="logoIV" type="id" />
+    <item name="titleTV" type="id" />
+    <item name="takeTestBtn" type="id" />
+    <item name="addMcqBtn" type="id" />
+</resources>

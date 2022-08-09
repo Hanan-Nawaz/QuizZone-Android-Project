@@ -19,11 +19,12 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/primary"
-            app:titleTextColor="@color/white"
+            android:background="@color/white"
+            app:titleTextColor="@color/black"
             app:title="@string/menu_dashboard"
             android:id="@+id/Toolbar"
             app:navigationIcon="@drawable/menu_icon"
+
             />
 
 

@@ -4,30 +4,29 @@ import com.google.firebase.firestore.PropertyName;
 
 public class AddTopics {
 
-    private String Image, Name;
+     String image, name;
+
+    public AddTopics() {
+    }
 
     public AddTopics(String image, String name) {
-        Image = image;
-        Name = name;
+        this.image = image;
+        this.name = name;
     }
 
-    @PropertyName("Image")
     public String getImage() {
-        return Image;
+        return image;
     }
 
-    @PropertyName("Image")
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
     }
 
-    @PropertyName("Name")
     public String getName() {
-        return Name;
+        return name;
     }
 
-    @PropertyName("Name")
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

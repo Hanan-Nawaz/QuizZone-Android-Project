@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.Fragments.MainFragments.AddTopic;
 import com.example.quizzone.Fragments.MainFragments.Dashboard;
 import com.example.quizzone.Fragments.MainFragments.Profile;
+import com.example.quizzone.Fragments.MainFragments.ViewTopics;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -37,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        if (android.os.Build.VERSION.SDK_INT > 9)
+        {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
         navigationView = findViewById(R.id.NavigationView);
 
@@ -120,6 +127,19 @@ public class MainActivity extends AppCompatActivity {
                         addTopic.setArguments(bundle);
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.Main, addTopic);
+                        fragmentTransaction.commit();
+                        break;
+                    }
+
+                    case (R.id.viewTopics):{
+                        getSupportActionBar().setTitle("View Topics");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Email", email );
+                        bundle.putString("Name", name );
+                        ViewTopics viewTopics = new ViewTopics();
+                        viewTopics.setArguments(bundle);
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.Main, viewTopics);
                         fragmentTransaction.commit();
                         break;
                     }
