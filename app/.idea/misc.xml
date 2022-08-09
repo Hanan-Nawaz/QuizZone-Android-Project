@@ -4,7 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1157548125633232" />
+        <entry key="src/main/res/drawable/books.xml" value="0.1" />
+        <entry key="src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="src/main/res/drawable/dashboard_mid.xml" value="0.1" />
+        <entry key="src/main/res/drawable/dashboard_top.xml" value="0.1" />
+        <entry key="src/main/res/drawable/list.xml" value="0.1" />
+        <entry key="src/main/res/drawable/person.xml" value="0.1" />
+        <entry key="src/main/res/drawable/profile_icon.xml" value="0.1" />
+        <entry key="src/main/res/drawable/view.xml" value="0.1" />
+        <entry key="src/main/res/drawable/white_user.xml" value="0.1" />
+        <entry key="src/main/res/layout-v26/fragment_dashboard.xml" value="0.12552083333333333" />
         <entry key="src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="src/main/res/layout/fragment_view_topics.xml" value="0.1" />
         <entry key="src/main/res/layout/topic.xml" value="0.15443840579710144" />
         <entry key="src/main/res/menu/menu_main.xml" value="0.17864583333333334" />

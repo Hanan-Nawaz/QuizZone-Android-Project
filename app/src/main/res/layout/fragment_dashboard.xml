@@ -3,24 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:paddingTop="70dp"
-    android:paddingBottom="70dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    android:background="@color/white"
     tools:context=".Fragments.MainFragments.Dashboard">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:background="@drawable/dashboard_top"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_weight="1.3">
+        android:padding="10dp"
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="@string/WelcomeBack"
-            android:textSize="40sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="55dp"
+            android:autoSizeStepGranularity="1sp"
             android:layout_marginTop="10dp"
             android:paddingTop="10dp"
             />
@@ -30,84 +39,274 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/DashUserNAme"
-            android:textSize="50sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="55dp"
+            android:autoSizeStepGranularity="1sp"
             tools:ignore="NestedWeights" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.25"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="20sp"
+        android:autoSizeMaxTextSize="24sp"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:autoSizeStepGranularity="1sp"
+        android:text="@string/stats"
+
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
         android:layout_weight="1">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/dashboardborder"
-            android:backgroundTint="#FF5722"
-            tools:ignore="NestedWeights">
+            >
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:padding="30dp"
-                android:background="@drawable/white_user"
-                tools:ignore="NestedWeights" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:textColor="@color/white"
-                android:textSize="40sp"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:id="@+id/Users"
-                />
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="5dp"
+                    android:src="@drawable/books_icon"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:text="Total Subjects"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:id="@+id/Subjects"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:textAlignment="viewEnd"
+                        android:text="Total Subjects"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="5dp"
+                    android:src="@drawable/users_icon"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:text="Total Users"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:id="@+id/Users"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:textAlignment="viewEnd"
+                        android:text="Total Subjects"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                tools:ignore="NestedWeights">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="5dp"
+                    android:src="@drawable/testtaken_icon"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:text="Test you Attempted"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:textStyle="bold"
+                        android:id="@+id/TestTaken"
+                        android:textColor="@color/primary"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:textAlignment="viewEnd"
+                        android:text="Total Subjects"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10sp"
+                        android:autoSizeMaxTextSize="15dp"
+                        android:autoSizeStepGranularity="1sp"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="0.25">
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/dashboardborder"
-            android:backgroundTint="#E91E63"
-            android:orientation="vertical">
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="25dp"
+            android:textColor="@color/black"
+            android:padding="5dp"
+            android:autoSizeStepGranularity="1sp"
+            android:text="Topics"
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:padding="30dp"
-                android:textSize="30sp"
-                android:background="@drawable/books"
-                tools:ignore="SmallSp" />
+            />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textSize="40sp"
-                android:textColor="@color/white"
-                android:id="@+id/TestTaken"
-                tools:ignore="SmallSp"
-                />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="20sp"
+            android:autoSizeMaxTextSize="25dp"
+            android:textColor="@color/primary"
+            android:layout_gravity="end"
+            android:textAlignment="viewEnd"
+            android:padding="5dp"
+            android:autoSizeStepGranularity="1sp"
+            android:text="See All"
 
-        </LinearLayout>
+            />
 
     </LinearLayout>
 
@@ -115,45 +314,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@drawable/dashboardborder"
-            android:backgroundTint="#3F51B5"
-            tools:ignore="NestedWeights">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:padding="30dp"
-                android:textSize="20sp"
-                android:background="@drawable/list"
-                tools:ignore="NestedWeights,SmallSp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textSize="40sp"
-                android:id="@+id/Subjects"
-                android:textColor="@color/white"
-                tools:ignore="SmallSp"
-                />
-        </LinearLayout>
-
-
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:tag="Loading"
+            android:indeterminateTint="@color/primary"
+            android:id="@+id/TopicsLoading" />
 
     </LinearLayout>
 
