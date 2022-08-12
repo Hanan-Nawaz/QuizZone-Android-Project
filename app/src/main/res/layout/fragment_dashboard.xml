@@ -302,6 +302,7 @@
             android:textColor="@color/primary"
             android:layout_gravity="end"
             android:textAlignment="viewEnd"
+            android:id="@+id/seeAll"
             android:padding="5dp"
             android:autoSizeStepGranularity="1sp"
             android:text="See All"
@@ -313,18 +314,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:id="@+id/TopicsDashboard"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="1">
 
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:tag="Loading"
-            android:indeterminateTint="@color/primary"
-            android:id="@+id/TopicsLoading" />
+
 
     </LinearLayout>
 

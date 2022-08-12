@@ -4,85 +4,80 @@ import com.google.firebase.firestore.PropertyName;
 
 public class Insert {
 
-    private String Email, Id, MobileNumber,  Password,  Name,  Occupation,  Status;
+    private String email, id, mobileNumber,  password,  name,  occupation,  status, image;
 
-    public Insert(String Email, String Id, String MobileNumber, String Password, String Name, String Occupation, String Status) {
-        this.Email = Email;
-        this.Id = Id;
-        this.MobileNumber = MobileNumber;
-        this.Password = Password;
-        this.Name = Name;
-        this.Occupation = Occupation;
-        this.Status = Status;
+    public Insert(String email, String id, String mobileNumber, String password, String name, String occupation, String status, String image) {
+        this.email = email;
+        this.id = id;
+        this.mobileNumber = mobileNumber;
+        this.password = password;
+        this.name = name;
+        this.occupation = occupation;
+        this.status = status;
+        this.image = image;
     }
 
-    @PropertyName("Email")
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    @PropertyName("Email")
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    @PropertyName("ID")
     public String getId() {
-        return Id;
+        return id;
     }
 
-    @PropertyName("ID")
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
-    @PropertyName("MobileNumber")
     public String getMobileNumber() {
-        return MobileNumber;
+        return mobileNumber;
     }
 
-    @PropertyName("MobileNumber")
     public void setMobileNumber(String mobileNumber) {
-        MobileNumber = mobileNumber;
+        this.mobileNumber = mobileNumber;
     }
 
-    @PropertyName("Password")
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    @PropertyName("Password")
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
-    @PropertyName("Name")
     public String getName() {
-        return Name;
+        return name;
     }
 
-    @PropertyName("Name")
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    @PropertyName("Occupation")
     public String getOccupation() {
-        return Occupation;
+        return occupation;
     }
 
-    @PropertyName("Occupation")
     public void setOccupation(String occupation) {
-        Occupation = occupation;
+        this.occupation = occupation;
     }
 
-    @PropertyName("Status")
     public String getStatus() {
-        return Status;
+        return status;
     }
 
-    @PropertyName("Status")
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

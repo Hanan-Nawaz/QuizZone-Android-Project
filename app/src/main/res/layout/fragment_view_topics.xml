@@ -6,10 +6,19 @@
     android:background="@color/white"
     tools:context=".Fragments.MainFragments.ViewTopics">
 
+  <ProgressBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:indeterminateTint="@color/primary"
+    android:id="@+id/viewTopicsPBar" />
+
   <androidx.recyclerview.widget.RecyclerView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:id="@+id/recyclerview"
       />
+
+
 
 </FrameLayout>

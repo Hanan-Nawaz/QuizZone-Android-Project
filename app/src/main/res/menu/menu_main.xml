@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home"
@@ -15,7 +15,7 @@
 
     </group>
 
-    <item android:title="Topics">
+    <item android:title="Topics" android:iconTint="@color/black">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -32,7 +32,7 @@
         </menu>
     </item>
 
-    <item android:title="Logout">
+    <item android:title="Logout" android:iconTint="@color/black">
         <menu>
             <group android:checkableBehavior="single">
                 <item

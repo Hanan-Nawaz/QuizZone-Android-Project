@@ -16,16 +16,27 @@
         android:orientation="vertical"
         >
 
-        <androidx.appcompat.widget.Toolbar
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            app:titleTextColor="@color/black"
-            app:title="@string/menu_dashboard"
-            android:id="@+id/Toolbar"
-            app:navigationIcon="@drawable/menu_icon"
+            android:layout_height="51dp"
+            android:orientation="vertical"
+            android:background="@drawable/edittext_profile"
+            >
 
-            />
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                app:navigationIcon="@drawable/menu_icon"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:title="@string/menu_dashboard"
+                app:titleTextColor="@color/black"
+                android:id="@+id/Toolbar"
+                />
+
+        </LinearLayout>
+
+
 
 
 
@@ -48,7 +59,11 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_main"
         android:id="@+id/NavigationView"
+        android:background="@color/white"
         android:layout_gravity="start"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

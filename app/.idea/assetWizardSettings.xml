@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/opt/android-studio-2021.2.1/android-studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/remove_red_eye/baseline_remove_red_eye_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/arrow_drop_down/baseline_arrow_drop_down_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,9 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="color" value="2e2eff" />
-                            <entry key="outputName" value="testtaken_icon" />
+                            <entry key="outputName" value="drop_arrow" />
                             <entry key="sourceFile" value="$USER_HOME$/Downloads/test-svgrepo-com.svg" />
                           </map>
                         </option>

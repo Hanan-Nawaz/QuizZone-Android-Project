@@ -27,12 +27,12 @@ import java.util.ArrayList;
 public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapterClass.ViewHolder>{
 
     ArrayList<AddTopics> addTopics;
+    String UserEmail;
 
-
-    public ViewTopicAdapterClass(ArrayList<AddTopics> addTopics) {
+    public ViewTopicAdapterClass(ArrayList<AddTopics> addTopics, String userEmail) {
         this.addTopics = addTopics;
+        UserEmail = userEmail;
     }
-
 
 
     @NonNull
@@ -46,6 +46,15 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AddTopics addTopic = addTopics.get(position);
         holder.titleTV.setText(addTopic.getName());
+        holder.nicheTV.setText(addTopic.getNiche());
+
+        if(addTopic.getEmail().equals(UserEmail)){
+            holder.addMcqBtn.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.addMcqBtn.setVisibility(View.GONE);
+        }
+
         URL newurl = null;
         try {
             newurl = new URL(addTopic.getImage());
@@ -68,7 +77,7 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView topicLogoIV;
-        TextView titleTV;
+        TextView titleTV, nicheTV;
         Button takeTestBtn;
         Button addMcqBtn;
 
@@ -77,6 +86,7 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
 
              topicLogoIV = itemView.findViewById(R.id.logoIV);
              titleTV = itemView.findViewById(R.id.titleTV);
+             nicheTV = itemView.findViewById(R.id.nicheTV);
              takeTestBtn = itemView.findViewById(R.id.takeTestBtn);
              addMcqBtn = itemView.findViewById(R.id.addMcqBtn);
 

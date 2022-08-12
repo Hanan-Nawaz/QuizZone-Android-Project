@@ -17,10 +17,13 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.quizzone.Classes.AddTopics;
@@ -36,6 +39,12 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 public class AddTopic extends Fragment {
 
     public AddTopic() {
@@ -43,13 +52,17 @@ public class AddTopic extends Fragment {
     }
 
     ImageView imageView;
-    ImageButton btnAdd;
-    EditText topicName;
+    ImageView btnAdd;
+    EditText topicName, topicEmail, topicAdderName;
+    Spinner nicheSpinner;
     Button btnSave;
 
     private final int PICK_IMAGE_REQUEST = 22;
     private Uri filepath;
     String Path;
+
+    String Email;
+    String Name;
 
     FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
     StorageReference storageReference = firebaseStorage.getReference();
@@ -63,10 +76,44 @@ public class AddTopic extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add_topic, container, false);
 
+         Name = this.getArguments().getString("Name");
+         Email = this.getArguments().getString("Email");
+
         imageView = view.findViewById(R.id.imageView);
         btnAdd = view.findViewById(R.id.btnChoose);
         topicName = view.findViewById(R.id.addTopicET);
+        topicEmail = view.findViewById(R.id.addTopicEmail);
+        topicAdderName = view.findViewById(R.id.addTopicName);
+        nicheSpinner = view.findViewById(R.id.addTopicNiche);
+
+        topicEmail.setText(Email);
+        topicAdderName.setText(Name);
+
+        List<String> niche = new ArrayList<String>();
+        niche.add("Web Development");
+        niche.add("Android Development");
+        niche.add("Programming");
+        niche.add("Other");
+
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getContext(), R.layout.spinner_text, niche);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        nicheSpinner.setAdapter(arrayAdapter);
+
+//        nicheSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                dataSelected = nicheSpinner.getSelectedItem().toString();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
+
         btnSave = view.findViewById(R.id.addTopicBtn);
+
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,14 +128,14 @@ public class AddTopic extends Fragment {
 
 
                 String TopicName = topicName.getText().toString();
-
+                String dataSelected = nicheSpinner.getSelectedItem().toString();
                 if(TopicName.equals("")){
                     topicName.setError("Topic Name and Image is Mandatory");
                 }
                 else{
 
 
-                    UploadImage(TopicName);
+                    UploadImage(TopicName, dataSelected);
 
                 }
 
@@ -100,15 +147,15 @@ public class AddTopic extends Fragment {
         return view;
     }
 
-    private void UploadImage(String TopicName) {
+    private void UploadImage(String TopicName, String dataSelected) {
         if(filepath != null){
 
             ProgressDialog progressDialog = new ProgressDialog(getContext());
             progressDialog.setTitle("Uploading");
             progressDialog.show();
 
-
-            StorageReference ref = storageReference.child("uploads/" + TopicName);
+            String imageName = TopicName + Email;
+            StorageReference ref = storageReference.child("uploads/" + imageName);
 
             ref.putFile(filepath).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
@@ -136,31 +183,44 @@ public class AddTopic extends Fragment {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    storageReference.child("uploads/" + TopicName).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    storageReference.child("uploads/" + imageName).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             Uri DownUri = uri;
                             Path = uri.toString();
 
-                            AddTopics addTopics = new AddTopics(Path, TopicName);
 
-                            colReference.document(TopicName).set(addTopics).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()) {
-                                        progressDialog.dismiss();
-                                        Toast.makeText(getContext(), "Topic Added Successfully", Toast.LENGTH_SHORT).show();
+                            if(TopicName.equals("") || Name.equals("") || Email.equals("")){
+                                Toast.makeText(getContext(), "Please Fill all Mandatory Fields", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                AddTopics addTopics = new AddTopics(Path, TopicName, Name,dataSelected, Email);
+
+                                String nameDoc = TopicName + Email;
+
+                                colReference.document(nameDoc).set(addTopics).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()) {
+                                            progressDialog.dismiss();
+                                            Toast.makeText(getContext(), "Topic Added Successfully", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else{
+                                            Toast.makeText(getContext(), "Unexpected Error! Try Again", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                    else{
-                                        Toast.makeText(getContext(), "Unexpected Error! Try Again", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
+                                });
+                            }
+
+
                         }
                     });
 
                 }
             });
+        }
+        else{
+            Toast.makeText(getContext(), "Please Select Image", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -187,4 +247,5 @@ public class AddTopic extends Fragment {
         }
 
     }
+
 }

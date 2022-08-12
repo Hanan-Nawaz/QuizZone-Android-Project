@@ -4,31 +4,78 @@
     android:layout_height="270dp"
     android:layout_marginTop="20dp"
     android:background="@color/primary"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
-    <ImageView
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/quizzone"
-        />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:textColor="@color/white"
-        android:id="@+id/UserName"
-        />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/headerIV"
+            android:src="@drawable/quizzone"
+            android:visibility="gone"
+            />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:textColor="@color/white"
-        android:id="@+id/UserEmail"
-        />
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/white"
+            android:id="@+id/headerPBar"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="20sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeTextType="none"
+            android:autoSizeStepGranularity="5sp"
+            android:text="Hanan"
+            android:textColor="@color/white"
+            android:id="@+id/UserName"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="15sp"
+            android:textStyle="italic"
+            android:autoSizeMinTextSize="5sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1sp"
+            android:text="Hanan"
+            android:textColor="@color/white"
+            android:id="@+id/UserEmail"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
 
 </LinearLayout>

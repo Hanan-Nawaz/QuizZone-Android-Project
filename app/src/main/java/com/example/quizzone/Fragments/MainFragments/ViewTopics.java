@@ -11,9 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.quizzone.Classes.AdapterClasses.ViewTopicAdapterClass;
 import com.example.quizzone.Classes.AddTopics;
@@ -36,9 +38,7 @@ public class ViewTopics extends Fragment {
     ArrayList<AddTopics> addTopic ;
     String name, image;
     ViewTopicAdapterClass viewTopicAdapterClass;
-
-
-
+    ProgressBar PBarTopics;
 
     public ViewTopics() {
         // Required empty public constructor
@@ -50,19 +50,17 @@ public class ViewTopics extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view_topics, container, false);
+        String Email = this.getArguments().getString("Email");
         ViewTopicsRV = view.findViewById(R.id.recyclerview);
+        PBarTopics = view.findViewById(R.id.viewTopicsPBar);
         ViewTopicsRV.setLayoutManager(new LinearLayoutManager(getContext()));
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference colRef = db.collection("Topics");
         addTopic = new ArrayList<>();
-        viewTopicAdapterClass = new ViewTopicAdapterClass(addTopic);
-
+        viewTopicAdapterClass = new ViewTopicAdapterClass(addTopic, Email);
         ViewTopicsRV.setAdapter(viewTopicAdapterClass);
 
-        ProgressDialog progressDialog = new ProgressDialog(getContext());
-        progressDialog.setTitle("Loading..");
-        progressDialog.show();
 
         colRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @SuppressLint("NotifyDataSetChanged")
@@ -74,12 +72,16 @@ public class ViewTopics extends Fragment {
                     addTopic.add(addTopics);
                 }
                 viewTopicAdapterClass.notifyDataSetChanged();
-                progressDialog.cancel();
             }
 
         });
 
-
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PBarTopics.setVisibility(View.GONE);
+            }
+        }, 12000);
 
         return view;
     }

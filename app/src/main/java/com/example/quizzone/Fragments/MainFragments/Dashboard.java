@@ -4,13 +4,17 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quizzone.Fragments.MainFragments.SubFragments.TopicsHorizontal;
 import com.example.quizzone.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,7 +27,9 @@ public class Dashboard extends Fragment {
     TextView test;
     TextView user;
     TextView subject;
-    TextView name;
+    TextView name,seeAll;
+
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -43,6 +49,8 @@ public class Dashboard extends Fragment {
         user = view.findViewById(R.id.Users);
         subject = view.findViewById(R.id.Subjects);
         name = view.findViewById(R.id.DashUserNAme);
+        seeAll = view.findViewById(R.id.seeAll);
+
 
         name.setText(Name);
 
@@ -99,6 +107,22 @@ public class Dashboard extends Fragment {
                 }
             }
         });
+
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewTopics viewTopics = new ViewTopics();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.Main, viewTopics);
+                fragmentTransaction.commit();
+            }
+        });
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        TopicsHorizontal topicsHorizontal = new TopicsHorizontal();
+        fragmentTransaction.replace(R.id.TopicsDashboard, topicsHorizontal);
+        fragmentTransaction.commit();
+
         return view;
     }
 }

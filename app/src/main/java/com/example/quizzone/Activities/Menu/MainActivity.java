@@ -10,11 +10,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
@@ -25,6 +28,12 @@ import com.example.quizzone.Fragments.MainFragments.ViewTopics;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     NavigationView navigationView;
@@ -33,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     TextView UserEmail;
     TextView UserName;
+    CircleImageView IVHeader;
+    ProgressBar headerPBAr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +62,21 @@ public class MainActivity extends AppCompatActivity {
 
         UserEmail = header.findViewById(R.id.UserEmail);
         UserName = header.findViewById(R.id.UserName);
+        IVHeader = header.findViewById(R.id.headerIV);
+        headerPBAr = header.findViewById(R.id.headerPBar);
 
 
             String email = getIntent().getStringExtra("Email");
             String name = getIntent().getStringExtra("Name");
             String Role = getIntent().getStringExtra("Role");
+            String Image = getIntent().getStringExtra("Image");
             UserName.setText(name);
             UserEmail.setText(email);
 
 
 
-               if(savedInstanceState == null){
+
+        if(savedInstanceState == null){
             Bundle bundle = new Bundle();
             bundle.putString("Email", email );
             bundle.putString("Name", name );
@@ -123,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle("Add Topic");
                         Bundle bundle = new Bundle();
                         bundle.putString("Email" , email);
+                        bundle.putString("Name" , name);
                         AddTopic addTopic = new AddTopic();
                         addTopic.setArguments(bundle);
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -158,6 +174,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        try {
+            URL url = new URL(Image);
+            Bitmap bMAp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            IVHeader.setImageBitmap(bMAp);
+            headerPBAr.setVisibility(View.GONE);
+            IVHeader.setVisibility(View.VISIBLE);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         onBackPressed();
 
     }
@@ -166,4 +194,6 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         drawerLayout.closeDrawer(GravityCompat.START);
     }
+
+
 }

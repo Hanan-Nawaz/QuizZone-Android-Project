@@ -86,10 +86,11 @@ public class Signin_with_email extends Fragment {
                             if(task.isSuccessful()){
                                 DocumentSnapshot document = task.getResult();
                                 if(document.exists()){
-                                    String password = document.get("Password").toString();
-                                    String UName = document.get("Name").toString();
-                                    String UEmail = document.get("Email").toString();
-                                    String UOccupation = document.get("Occupation").toString();
+                                    String password = document.get("password").toString();
+                                    String UName = document.get("name").toString();
+                                    String UEmail = document.get("email").toString();
+                                    String UOccupation = document.get("occupation").toString();
+                                    String UImage = document.get("image").toString();
 
                                     if(password.equals(PassFromUSer)){
                                         Toast.makeText(getContext(), "Successfully SignedIn", Toast.LENGTH_LONG).show();
@@ -97,6 +98,7 @@ public class Signin_with_email extends Fragment {
                                         intent.putExtra("Email", UEmail);
                                         intent.putExtra("Name", UName);
                                         intent.putExtra("Role", UOccupation);
+                                        intent.putExtra("Image", UImage);
                                         startActivity(intent);
                                     }
                                     else{
