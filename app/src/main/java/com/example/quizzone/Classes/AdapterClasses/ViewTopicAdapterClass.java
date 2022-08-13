@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quizzone.Classes.AddTopics;
+import com.example.quizzone.Fragments.MainFragments.AddMcq;
 import com.example.quizzone.R;
 import com.google.thirdparty.publicsuffix.PublicSuffixType;
 
@@ -33,7 +38,6 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
         this.addTopics = addTopics;
         UserEmail = userEmail;
     }
-
 
     @NonNull
     @Override
@@ -66,6 +70,18 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
             e.printStackTrace();
         }
 
+        holder.addMcqBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity appCompatActivity = (AppCompatActivity) view.getContext();
+                AddMcq addMcq = new AddMcq();
+                Bundle bundle = new Bundle();
+                bundle.putString("TopicName" , addTopic.getName() + addTopic.getEmail());
+                bundle.putString("Name" , addTopic.getName());
+                addMcq.setArguments(bundle);
+                appCompatActivity.getSupportFragmentManager().beginTransaction().replace(R.id.Main, addMcq).addToBackStack(null).commit();
+            }
+        });
 
     }
 
@@ -89,6 +105,8 @@ public class ViewTopicAdapterClass extends RecyclerView.Adapter<ViewTopicAdapter
              nicheTV = itemView.findViewById(R.id.nicheTV);
              takeTestBtn = itemView.findViewById(R.id.takeTestBtn);
              addMcqBtn = itemView.findViewById(R.id.addMcqBtn);
+
+
 
         }
     }

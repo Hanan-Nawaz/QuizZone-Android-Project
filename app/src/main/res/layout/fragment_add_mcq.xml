@@ -1,14 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MainFragments.AddMcq">
+    android:background="@color/white"
+    tools:context=".Fragments.MainFragments.AddMcq"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/save"
+        android:textColor="@color/primary"
+        android:paddingTop="10dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="20sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textAlignment="viewEnd"
+        android:paddingLeft="5dp"
+        android:id="@+id/addMcqTopicName"
+        tools:ignore="ExtraText"
+        android:gravity="end" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Question"
+            android:textColor="#a6a6a6"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            tools:ignore="ExtraText"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Question Here"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            tools:ignore="ExtraText"
+            android:paddingLeft="5dp"
+            android:id="@+id/addMcqQsET"
+            android:background="@drawable/edittext_profile"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Option 1"
+            android:textColor="#a6a6a6"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            tools:ignore="ExtraText"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            tools:ignore="ExtraText"
+            android:paddingLeft="5dp"
+            android:id="@+id/addMcqOp1"
+            android:background="@drawable/edittext_profile"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Option 2"
+            android:textColor="#a6a6a6"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            tools:ignore="ExtraText"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            tools:ignore="ExtraText"
+            android:paddingLeft="5dp"
+            android:id="@+id/addMcqOp2"
+            android:background="@drawable/edittext_profile"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Option 3"
+            android:textColor="#a6a6a6"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            tools:ignore="ExtraText"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            tools:ignore="ExtraText"
+            android:paddingLeft="5dp"
+            android:id="@+id/addMcqOp3"
+            android:background="@drawable/edittext_profile"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Correct Option"
+            android:textColor="#a6a6a6"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingLeft="5dp"
+            tools:ignore="ExtraText"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            tools:ignore="ExtraText"
+            android:paddingLeft="5dp"
+            android:id="@+id/addMcqOpCorrect"
+            android:background="@drawable/edittext_profile"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="Correct option must not be included in other options"
+        android:textColor="#FF0000"
+        android:paddingTop="10dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="5dp"
+        tools:ignore="ExtraText"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Save"
+            android:textSize="30sp"
+            android:id="@+id/addMcqBtn"
+            android:textColor="@color/white"
+            android:background="@drawable/button"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
