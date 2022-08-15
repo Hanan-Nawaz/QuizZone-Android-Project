@@ -24,6 +24,7 @@ import com.example.quizzone.Activities.SignInSignUp.AuthActivity;
 import com.example.quizzone.Fragments.MainFragments.AddTopic;
 import com.example.quizzone.Fragments.MainFragments.Dashboard;
 import com.example.quizzone.Fragments.MainFragments.Profile;
+import com.example.quizzone.Fragments.MainFragments.UsersList;
 import com.example.quizzone.Fragments.MainFragments.ViewTopics;
 import com.example.quizzone.R;
 import com.google.android.material.navigation.NavigationView;
@@ -99,10 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(Role.equals("1")){
             navigationView.getMenu().findItem(R.id.addTopic).setVisible(false);
+            navigationView.getMenu().findItem(R.id.userList).setVisible(false);
         }
         else if(Role.equals("2")){
             navigationView.getMenu().findItem(R.id.addTopic).setVisible(true);
+            navigationView.getMenu().findItem(R.id.userList).setVisible(false);
         }
+
 
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -156,6 +160,19 @@ public class MainActivity extends AppCompatActivity {
                         viewTopics.setArguments(bundle);
                         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.Main, viewTopics);
+                        fragmentTransaction.commit();
+                        break;
+                    }
+
+                    case (R.id.userList):{
+                        getSupportActionBar().setTitle("User's List");
+                        Bundle bundle = new Bundle();
+                        bundle.putString("Email" , email);
+                        bundle.putString("Name" , name);
+                        UsersList usersList = new UsersList();
+                        usersList.setArguments(bundle);
+                        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.Main, usersList);
                         fragmentTransaction.commit();
                         break;
                     }

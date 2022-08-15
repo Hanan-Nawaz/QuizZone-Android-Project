@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    android:background="@color/white"
+    android:layout_height="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/add"
+            android:layout_gravity="start"
+            android:id="@+id/userListIV"
+            android:padding="10dp"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@string/app_name"
+                android:id="@+id/userListTV"
+                android:textAlignment="center"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:orientation="horizontal"
+                   android:layout_marginBottom="4dp"
+                   android:padding="5dp"
+                   android:layout_weight="1.4">
+
+                   <Button
+                       android:layout_width="0dp"
+                       android:id="@+id/userListActiveBtn"
+                       android:layout_marginRight="2dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:background="@drawable/button"
+                       android:text="Active"
+                       android:textColor="@color/white"
+                       android:autoSizeMaxTextSize="40sp"
+                       android:autoSizeMinTextSize="25sp"
+                       android:autoSizeStepGranularity="1sp"
+                       android:autoSizeTextType="none"
+                       />
+
+                   <Button
+                       android:layout_width="0dp"
+                       android:id="@+id/userListInActiveBtn"
+                       android:layout_marginLeft="2dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:background="@drawable/button"
+                       android:backgroundTint="#FF0000"
+                       android:text="InActive"
+                       android:textColor="@color/white"
+                       android:autoSizeMaxTextSize="40sp"
+                       android:autoSizeMinTextSize="25sp"
+                       android:autoSizeStepGranularity="1sp"
+                       android:autoSizeTextType="none"
+                       />
+
+               </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

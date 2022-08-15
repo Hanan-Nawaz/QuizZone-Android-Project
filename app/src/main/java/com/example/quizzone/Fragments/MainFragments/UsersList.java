@@ -3,64 +3,75 @@ package com.example.quizzone.Fragments.MainFragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
+import com.example.quizzone.Classes.AdapterClasses.UserListAdapterClass;
+import com.example.quizzone.Classes.Insert;
 import com.example.quizzone.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link UsersList#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class UsersList extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    RecyclerView userListRV;
+    UserListAdapterClass adapterClass;
+    ArrayList<Insert> arrayList;
+    ProgressBar userListPBar;
 
     public UsersList() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment UsersList.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static UsersList newInstance(String param1, String param2) {
-        UsersList fragment = new UsersList();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_users_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_users_list, container, false);
+
+        userListRV = view.findViewById(R.id.userListRV);
+        userListPBar = view.findViewById(R.id.userListPBar);
+        userListRV.setLayoutManager(new LinearLayoutManager(getContext()));
+        arrayList = new ArrayList<>();
+        adapterClass = new UserListAdapterClass(arrayList);
+        userListRV.setAdapter(adapterClass);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference colRef = db.collection("Users");
+
+        colRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                List<DocumentSnapshot> documentSnapshotArrayList = queryDocumentSnapshots.getDocuments();
+
+                for(DocumentSnapshot d : documentSnapshotArrayList){
+                    Insert insert = d.toObject(Insert.class);
+                    arrayList.add(insert);
+                }
+                adapterClass.notifyDataSetChanged();
+            }
+
+        });
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                userListPBar.setVisibility(View.GONE);
+            }
+        }, 5000);
+
+        return view;
     }
 }

@@ -6,6 +6,9 @@ public class Insert {
 
     private String email, id, mobileNumber,  password,  name,  occupation,  status, image;
 
+    public Insert() {
+    }
+
     public Insert(String email, String id, String mobileNumber, String password, String name, String occupation, String status, String image) {
         this.email = email;
         this.id = id;

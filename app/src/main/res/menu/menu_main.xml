@@ -32,6 +32,20 @@
         </menu>
     </item>
 
+    <item android:title="Users" android:iconTint="@color/black">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/userList"
+                    android:title="User List"
+                    android:icon="@drawable/list_icon"
+                    />
+
+            </group>
+        </menu>
+    </item>
+
+
     <item android:title="Logout" android:iconTint="@color/black">
         <menu>
             <group android:checkableBehavior="single">

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/arrow_drop_down/baseline_arrow_drop_down_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/view_list/baseline_view_list_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="drop_arrow" />
-                            <entry key="sourceFile" value="$USER_HOME$/Downloads/test-svgrepo-com.svg" />
+                            <entry key="color" value="2e2eff" />
+                            <entry key="outputName" value="list_icon" />
+                            <entry key="sourceFile" value="C:\Users\hanan\Downloads\test-svgrepo-com.svg" />
                           </map>
                         </option>
                       </PersistentState>
